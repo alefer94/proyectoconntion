@@ -50,19 +50,41 @@ if (empty($existe) && $id_user != 1) {
                         <div class="form-group">
                             <label><i class="fas fa-user"></i> VENDEDOR</label>
                             <p style="font-size: 16px; text-transform: uppercase; color: red;"><?php echo $_SESSION['nombre']; ?></p>
+                        
+                            <label class="pt-3" for="">Referencia</label>
+                            <input id="referencia" class="form-control" type="text" name="referencia" placeholder="Ingresa la Referencia">
+
+                            <label  class="pt-3" for="">Plazo de Entrega</label>
+                            <input id="entrega" class="form-control" type="text" name="entrega" placeholder="Ingresa dias">
+
+                            <label class="pt-3" for="">Validez de la oferta</label>
+                            <input id="dias" class="form-control" type="date" name="dias" placeholder="Ingresa Fecha">
+                             
+                            <label class="pt-3" for="">Tipo de Moneda</label>
+                            <select class="form-control" name="moneda" id="">
+                                <option  value="NUEVO SOL">NUEVO SOL</option>
+                                <option  value="DOLAR AMERICANO">DÓLAR AMERICANO</option>
+                                
+                            </select>
+
                         </div>
+                       
                     </div>
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                Buscar Producto
+                                Buscar Servicio
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <input id="producto" class="form-control" type="text" name="producto" placeholder="Ingresa el código o nombre">
                                 </div>
                             </div>
+                            
                         </div>
+
+                        <label class="pt-3" for="">Forma de Pago</label>
+                            <input id="formpago" class="form-control" type="text" name="formpago" placeholder="Ingresa la Forma de Pago">
                     </div>
                 </div>
 

@@ -54,7 +54,7 @@ $totalV = mysqli_num_rows($ventas);
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Productos</div>
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Servicios</div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
                                     <div class="h5 mb-0 mr-3 font-weight-bold text-white"><?php echo $totalP; ?></div>
@@ -80,7 +80,7 @@ $totalV = mysqli_num_rows($ventas);
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Ventas</div>
+                            <div class="text-xs font-weight-bold text-white text-uppercase mb-1">Cotizaciones</div>
                             <div class="h5 mb-0 font-weight-bold text-white"><?php echo $totalV; ?></div>
                         </div>
                         <div class="col-auto">
@@ -90,6 +90,7 @@ $totalV = mysqli_num_rows($ventas);
                 </div>
             </div>
         </a>
+        <!--
         <div class="col-lg-6">
             <div class="au-card m-b-30">
                 <div class="au-card-inner">
@@ -105,7 +106,7 @@ $totalV = mysqli_num_rows($ventas);
                     <canvas id="polarChart"></canvas>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
 <?php include_once "includes/footer.php"; ?>

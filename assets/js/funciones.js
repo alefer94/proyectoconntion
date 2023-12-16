@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    
+
     $('#tbl').DataTable();
     $(".confirmar").submit(function (e) {
         e.preventDefault();
@@ -67,12 +70,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (rows > 2) {
             var action = 'procesarVenta';
             var id = $('#idcliente').val();
+            var referencia = $('#referencia').val();
+            var entrega = $('#entrega').val();
+            console.log(entrega)
             $.ajax({
                 url: 'ajax.php',
                 async: true,
                 data: {
                     procesarVenta: action,
-                    id: id
+                    id: id,
+                    referencia:referencia,
+                    entrega:entrega
+                    
                 },
                 success: function (response) {
                     const res = JSON.parse(response);

@@ -9,7 +9,7 @@ if (empty($existe) && $id_user != 1) {
 }
 if (!empty($_POST)) {
     $alert = "";
-    if (empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['direccion'])) {
+    if (empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['direccion']) || empty($_POST['correo']) || empty($_POST['ruc']) ) {
         $alert = '<div class="alert alert-danger" role="alert">
                                     Todo los campos son obligatorio
                                 </div>';
@@ -17,6 +17,8 @@ if (!empty($_POST)) {
         $nombre = $_POST['nombre'];
         $telefono = $_POST['telefono'];
         $direccion = $_POST['direccion'];
+        $correo = $_POST['correo'];
+        $ruc = $_POST['ruc'];
         $usuario_id = $_SESSION['idUser'];
 
         $result = 0;
@@ -27,7 +29,7 @@ if (!empty($_POST)) {
                                     El cliente ya existe
                                 </div>';
         } else {
-            $query_insert = mysqli_query($conexion, "INSERT INTO cliente(nombre,telefono,direccion, usuario_id) values ('$nombre', '$telefono', '$direccion', '$usuario_id')");
+            $query_insert = mysqli_query($conexion, "INSERT INTO cliente(nombre,telefono,direccion, usuario_id , ruc , correo) values ('$nombre', '$telefono', '$direccion', '$usuario_id','$ruc','$correo')");
             if ($query_insert) {
                 $alert = '<div class="alert alert-success" role="alert">
                                     Cliente registrado
@@ -49,7 +51,9 @@ if (!empty($_POST)) {
         <thead class="thead-dark">
             <tr>
                 <th>#</th>
-                <th>Nombre</th>
+                <th>Empresa</th>
+                <th>Ruc</th>
+                <th>correo</th>
                 <th>Teléfono</th>
                 <th>Dirección</th>
                 <th>Estado</th>
@@ -73,6 +77,8 @@ if (!empty($_POST)) {
                     <tr>
                         <td><?php echo $data['idcliente']; ?></td>
                         <td><?php echo $data['nombre']; ?></td>
+                        <td><?php echo $data['ruc']; ?></td>
+                        <td><?php echo $data['correo']; ?></td>
                         <td><?php echo $data['telefono']; ?></td>
                         <td><?php echo $data['direccion']; ?></td>
                         <td><?php echo $estado; ?></td>
@@ -103,12 +109,20 @@ if (!empty($_POST)) {
             <div class="modal-body">
                 <form action="" method="post" autocomplete="off">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
+                        <label for="nombre">Nombre Empresa</label>
                         <input type="text" placeholder="Ingrese Nombre" name="nombre" id="nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="ruc">Ruc</label>
+                        <input type="text" placeholder="Ingrese RUC" name="ruc" id="ruc" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="telefono">Teléfono</label>
                         <input type="number" placeholder="Ingrese Teléfono" name="telefono" id="telefono" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="text" placeholder="Ingrese Correo" name="correo" id="correo" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="direccion">Dirección</label>

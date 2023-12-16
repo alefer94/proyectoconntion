@@ -9,14 +9,16 @@ if (empty($existe) && $id_user != 1) {
 }
 if (!empty($_POST)) {
     $alert = "";
-    if (empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['direccion'])) {
+    if (empty($_POST['nombre']) || empty($_POST['telefono']) || empty($_POST['direccion']) || empty($_POST['correo']) || empty($_POST['ruc'])) {
         $alert = '<div class="alert alert-danger" role="alert">Todo los campos son requeridos</div>';
     } else {
         $idcliente = $_POST['id'];
         $nombre = $_POST['nombre'];
         $telefono = $_POST['telefono'];
+        $correo = $_POST['correo'];
+        $ruc = $_POST['ruc'];
         $direccion = $_POST['direccion'];
-            $sql_update = mysqli_query($conexion, "UPDATE cliente SET nombre = '$nombre' , telefono = '$telefono', direccion = '$direccion' WHERE idcliente = $idcliente");
+            $sql_update = mysqli_query($conexion, "UPDATE cliente SET nombre = '$nombre' , telefono = '$telefono', direccion = '$direccion' , correo = '$correo' , ruc = '$ruc' WHERE idcliente = $idcliente");
 
             if ($sql_update) {
                 $alert = '<div class="alert alert-success" role="alert">Cliente Actualizado correctamente</div>';
@@ -41,6 +43,8 @@ if ($result_sql == 0) {
         $nombre = $data['nombre'];
         $telefono = $data['telefono'];
         $direccion = $data['direccion'];
+        $correo = $data['correo'];
+        $ruc = $data['ruc'];
     }
 }
 ?>
@@ -62,8 +66,16 @@ if ($result_sql == 0) {
                             <input type="text" placeholder="Ingrese Nombre" name="nombre" class="form-control" id="nombre" value="<?php echo $nombre; ?>">
                         </div>
                         <div class="form-group">
+                        <label for="ruc">Ruc</label>
+                        <input type="text" placeholder="Ingrese RUC" name="ruc" id="ruc" value="<?php echo $ruc; ?>" class="form-control">
+                         </div>
+                        <div class="form-group">
                             <label for="telefono">Teléfono</label>
                             <input type="number" placeholder="Ingrese Teléfono" name="telefono" class="form-control" id="telefono" value="<?php echo $telefono; ?>">
+                        </div>
+                        <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="text" placeholder="Ingrese Correo" name="correo" id="correo" value="<?php echo $correo; ?>" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="direccion">Dirección</label>

@@ -22,7 +22,7 @@ if (empty($_SESSION['active'])) {
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.php">Pos Venta</a>
+        <a class="navbar-brand" href="index.php"><img width="66%" src="https://tiendasenlineaperu.com/cotnuevo/logo-connections.png"></a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
 
         <!-- Navbar-->
@@ -44,7 +44,7 @@ if (empty($_SESSION['active'])) {
                     <div class="nav">
                         <a class="nav-link" href="ventas.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
-                            Nueva venta
+                            Nueva Cotización
                         </a>
                         <a class="nav-link" href="config.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
@@ -57,11 +57,11 @@ if (empty($_SESSION['active'])) {
 
                         <a class="nav-link" href="lista_ventas.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
-                            Ventas
+                            Cotizaciones
                         </a>
                         <a class="nav-link" href="productos.php">
                             <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
-                            Productos
+                            Servicios
                         </a>
                         <a class="nav-link" href="usuarios.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
